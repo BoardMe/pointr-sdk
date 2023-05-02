@@ -12,11 +12,28 @@ const setupSUT = () => {
 }
 
 describe('getDraft', () => {
+  it('should return an error if request fails', async () => {
+    const { getDraft } = setupSUT();
+
+    mockHttpResponse('get', {
+      error: {
+        status: 500,
+        message: 'Failed to fetch draft'
+      }
+    })
+
+    try {
+      await getDraft('test');
+    } catch (error) {
+      expect((error as any).message).toBe('Failed to fetch draft');
+    }
+  })
   it('should return a draft', async () => {
     const { getDraft } = setupSUT();
 
     mockHttpResponse('get', {
-      data: mockedDraft
+      data: mockedDraft,
+      error: null
     })
 
     const draft = await getDraft('test');
