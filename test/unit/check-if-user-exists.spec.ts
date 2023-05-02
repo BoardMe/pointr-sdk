@@ -2,8 +2,6 @@ import { Pointr } from "../../lib/pointr";
 import { draftMock } from "../mocks/draft.mock";
 import { httpMock, mockHttpResponse } from "../mocks/http.mock";
 
-const mockedDraft = draftMock();
-
 const setupSUT = () => {
   const pointr = new Pointr("sample-api-key");
   const checkIfUserExists = pointr.checkIfUserExists.bind(pointr)
@@ -35,7 +33,7 @@ describe('checkIfUserExists', () => {
       expect(message).toBe('Failed to fetch draft');
     }
   })
-  it('should return a draft', async () => {
+  it('should check if an user exists', async () => {
     const { checkIfUserExists } = setupSUT();
 
     const userEmail = 'test@test.com';

@@ -32,7 +32,7 @@ describe('getDraftPoints', () => {
       expect(message).toBe('Failed to fetch draft');
     }
   })
-  it('should return a list of draft points', async () => {
+  it('should return a list of points', async () => {
     const { getDraftPoints } = setupSUT();
 
     const mockedDraft = draftMock();

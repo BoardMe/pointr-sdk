@@ -33,7 +33,7 @@ describe('createDraftUrl', () => {
       expect(message).toBe(mockedErrorMessage);
     }
   })
-  it('should return a draft-url object', async () => {
+  it('should create and return a draft-url object', async () => {
     const { createDraftUrl } = setupSUT();
 
     const mockedDraft = draftMock()

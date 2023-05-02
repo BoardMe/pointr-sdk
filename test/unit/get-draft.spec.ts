@@ -2,8 +2,6 @@ import { Pointr } from "../../lib/pointr";
 import { draftMock } from "../mocks/draft.mock";
 import { httpMock, mockHttpResponse } from "../mocks/http.mock";
 
-const mockedDraft = draftMock();
-
 const setupSUT = () => {
   const pointr = new Pointr("sample-api-key");
   const getDraft = pointr.getDraft.bind(pointr)
@@ -35,6 +33,8 @@ describe('getDraft', () => {
   })
   it('should return a draft', async () => {
     const { getDraft } = setupSUT();
+
+    const mockedDraft = draftMock();
 
     mockHttpResponse('get', {
       data: mockedDraft,

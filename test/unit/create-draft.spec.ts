@@ -40,7 +40,7 @@ describe('createDraft', () => {
       expect(message).toBe(mockedErrorMessage);
     }
   })
-  it('should return a draft', async () => {
+  it('should create and return a draft', async () => {
     const { createDraft } = setupSUT();
 
     const mockedParams = {
