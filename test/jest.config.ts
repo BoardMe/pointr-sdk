@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   transform: {
     '^.+\\.ts?$': 'ts-jest',
   },
@@ -6,3 +6,5 @@ module.exports = {
   moduleFileExtensions: ['js', 'ts', 'json', 'node'],
   setupFiles: ['./jest.setup.ts'],
 };
+
+export default config
