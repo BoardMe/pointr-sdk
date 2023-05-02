@@ -1,4 +1,4 @@
-import {AxiosResponse} from "axios";
+import {Failure, Result, Success} from "../../services/http/http.types";
 
 type HttpMethod = "get" | "post" | "put" | "delete"
 
@@ -9,6 +9,6 @@ export const httpMock = {
   delete: jest.fn()
 }
 
-export const mockHttpResponse = (method: HttpMethod,resultMock: Partial<AxiosResponse>) => {
+export const mockHttpResponse = (method: HttpMethod, resultMock: Failure | Success<any>) => {
   return httpMock[method].mockResolvedValueOnce(resultMock)
 }
