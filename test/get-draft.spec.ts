@@ -1,6 +1,6 @@
 import { Pointr } from "../lib/pointr";
 import { draftMock } from "./mocks/draft.mock";
-import { httpMock } from "./mocks/http.mock";
+import { mockHttpResponse } from "./mocks/http.mock";
 
 const mockedDraft = draftMock();
 
@@ -15,7 +15,9 @@ describe('getDraft', () => {
   it('should return a draft', async () => {
     const { getDraft } = setupSUT();
 
-    httpMock.get.mockResolvedValueOnce({ data: mockedDraft })
+    mockHttpResponse('get', {
+      data: mockedDraft
+    })
 
     const draft = await getDraft('test');
 
