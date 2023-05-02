@@ -1,4 +1,4 @@
-import { Http } from "../services/http/http.service";
+import { Http } from "./services/http/http.service";
 import {
   CheckIfUserExistsResponse,
   CreateDraftParams,

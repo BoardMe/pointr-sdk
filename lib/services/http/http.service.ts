@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import { Contract } from "./contract";
-import {config} from "../../lib/config";
+import {config} from "../../config";
 
 export class Http extends Contract {
   private client: AxiosInstance

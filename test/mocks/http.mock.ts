@@ -1,4 +1,4 @@
-import {Failure, Result, Success} from "../../services/http/http.types";
+import {Failure, Result, Success} from "../../lib/services/http/http.types";
 
 type HttpMethod = "get" | "post" | "put" | "delete"
 
