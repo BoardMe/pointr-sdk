@@ -5,19 +5,27 @@
     "lib": [
       "es6"
     ],
+    "rootDir": "./lib",
+    "strict": true,
+
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
     "sourceMap": true,
     "outDir": "./dist",
-    "strict": true,
+    "removeComments": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },
   "exclude": [
     "node_modules",
-    "**/*.spec.ts"
+    "dist",
+    "test"
   ],
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "testMatch": ["<rootDir>/src/**/*.(test|spec).(ts)"]
+    "testMatch": ["/**/*.(test|spec).(ts)"]
   }
 }
