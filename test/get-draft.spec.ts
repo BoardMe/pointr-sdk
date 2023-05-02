@@ -12,6 +12,10 @@ const setupSUT = () => {
 }
 
 describe('getDraft', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  })
+
   it('should return an error if request fails', async () => {
     const { getDraft } = setupSUT();
 
