@@ -1,6 +1,6 @@
-import { Pointr } from "../lib/pointr";
-import { draftMock } from "./mocks/draft.mock";
-import { httpMock, mockHttpResponse } from "./mocks/http.mock";
+import { Pointr } from "../../lib/pointr";
+import { draftMock } from "../mocks/draft.mock";
+import { httpMock, mockHttpResponse } from "../mocks/http.mock";
 
 const setupSUT = () => {
   const pointr = new Pointr("sample-api-key");
