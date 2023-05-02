@@ -1,4 +1,6 @@
-const config = {
+import { JestConfigWithTsJest } from "ts-jest";
+
+const config: JestConfigWithTsJest = {
   transform: {
     '^.+\\.ts?$': 'ts-jest',
   },
