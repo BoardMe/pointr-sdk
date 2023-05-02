@@ -1,7 +1,7 @@
 import { Pointr } from "../../lib/pointr";
 import { draftMock } from "../mocks/draft.mock";
 import { httpMock, mockHttpResponse } from "../mocks/http.mock";
-import {pointsMock} from "../mocks/point.mock";
+import { pointMock } from "../mocks/point.mock";
 
 const setupSUT = () => {
   const pointr = new Pointr("sample-api-key");
@@ -36,7 +36,7 @@ describe('getDraftPoints', () => {
     const { getDraftPoints } = setupSUT();
 
     const mockedDraft = draftMock();
-    const mockedPoints = [pointsMock(), pointsMock()];
+    const mockedPoints = [pointMock(), pointMock()];
 
     mockHttpResponse('get', {
       data: mockedPoints,

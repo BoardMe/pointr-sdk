@@ -56,4 +56,14 @@ export class Pointr {
 
     return result.data;
   }
+
+  async getExistingPoints(userEmail: string) {
+    const result = await this.http.get<Point[]>(`/v1/user/${userEmail}/points`);
+
+    if(result.error) {
+      throw new Error(result.error.message);
+    }
+
+    return result.data;
+  }
 }

@@ -1,6 +1,6 @@
 import { Point } from "../../lib/pointr.types";
 
-export const pointsMock = (params?: Partial<Point>) =>
+export const pointMock = (params?: Partial<Point>) =>
   ({
     question: params?.question ?? "test-question",
     answer: params?.answer ?? "test-answer",
