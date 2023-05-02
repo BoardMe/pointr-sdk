@@ -1,6 +1,6 @@
 import { Pointr } from "../lib/pointr";
 import { draftMock } from "./mocks/draft.mock";
-import { mockHttpResponse } from "./mocks/http.mock";
+import { httpMock, mockHttpResponse } from "./mocks/http.mock";
 
 const mockedDraft = draftMock();
 
@@ -39,5 +39,6 @@ describe('getDraft', () => {
     const draft = await getDraft('test');
 
     expect(draft).toBe(mockedDraft);
+    expect(httpMock.get).toBeCalledWith('/v1/draft/test');
   });
 })
