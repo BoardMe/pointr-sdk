@@ -25,7 +25,8 @@ describe('getDraft', () => {
     try {
       await getDraft('test');
     } catch (error) {
-      expect((error as any).message).toBe('Failed to fetch draft');
+      const message = (error as Error).message;
+      expect(message).toBe('Failed to fetch draft');
     }
   })
   it('should return a draft', async () => {
