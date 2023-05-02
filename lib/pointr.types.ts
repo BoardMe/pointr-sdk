@@ -9,6 +9,12 @@ export type Draft = {
   updatedAt: string
 }
 
+export type Point = {
+  question: string
+  answer: string
+  createdAt: string
+}
+
 export type CreateDraftParams = {
   userEmail: string
   userKey: string

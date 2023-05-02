@@ -1,5 +1,5 @@
 import { Http } from "../services/http/http.service";
-import {CreateDraftParams, CreateDraftUrlResponse, Draft} from "./pointr.types";
+import {CreateDraftParams, CreateDraftUrlResponse, Draft, Point} from "./pointr.types";
 
 export class Pointr {
   private http: Http;
@@ -29,6 +29,16 @@ export class Pointr {
 
   async createDraftUrl(userKey: string) {
     const result = await this.http.post<CreateDraftUrlResponse>(`/v1/draft/url`, { userKey });
+
+    if(result.error) {
+      throw new Error(result.error.message);
+    }
+
+    return result.data;
+  }
+
+  async getDraftPoints(userKey: string) {
+    const result = await this.http.get<Point[]>(`/v1/draft/${userKey}/points`);
 
     if(result.error) {
       throw new Error(result.error.message);
