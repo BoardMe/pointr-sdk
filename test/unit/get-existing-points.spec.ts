@@ -1,4 +1,4 @@
-import { Pointr } from "../../lib/pointr";
+import { Pointr } from "../../lib";
 import { httpMock, mockHttpResponse } from "../mocks/http.mock";
 import { pointMock } from "../mocks/point.mock";
 

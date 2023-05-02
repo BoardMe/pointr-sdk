@@ -1,5 +1,4 @@
-import { Pointr } from "../../lib/pointr";
-import { draftMock } from "../mocks/draft.mock";
+import { Pointr } from "../../lib";
 import { httpMock, mockHttpResponse } from "../mocks/http.mock";
 
 const setupSUT = () => {
