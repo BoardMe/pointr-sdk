@@ -1,7 +1,14 @@
 import { Http } from "../services/http/http.service";
-import {CheckIfUserExistsResponse, CreateDraftParams, CreateDraftUrlResponse, Draft, Point} from "./pointr.types";
+import {
+  CheckIfUserExistsResponse,
+  CreateDraftParams,
+  CreateDraftUrlResponse,
+  Draft,
+  Point,
+  PointrClient
+} from "./pointr.types";
 
-export class Pointr {
+export class Pointr implements PointrClient {
   private http: Http;
   constructor(private readonly apiKey: string) {
     this.http = new Http(apiKey)

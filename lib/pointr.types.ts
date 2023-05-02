@@ -1,3 +1,12 @@
+export interface PointrClient {
+  getDraft(userKey: string): Promise<Draft>
+  createDraft(params: CreateDraftParams): Promise<Draft>
+  createDraftUrl(userKey: string): Promise<CreateDraftUrlResponse>
+  getDraftPoints(userKey: string): Promise<Point[]>
+  checkIfUserExists(userEmail: string): Promise<CheckIfUserExistsResponse>
+  getExistingPoints(userEmail: string): Promise<Point[]>
+}
+
 export type Draft = {
   id: string
   userId: string
