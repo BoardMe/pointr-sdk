@@ -15,3 +15,8 @@ export type CreateDraftParams = {
   redirectUrl: string
   answersRequired?: number
 }
+
+export type CreateDraftUrlResponse = {
+  url: string
+  draftId: string
+}
