@@ -1,5 +1,5 @@
 import { Http } from "../services/http/http.service";
-import {CreateDraftParams, CreateDraftUrlResponse, Draft, Point} from "./pointr.types";
+import {CheckIfUserExistsResponse, CreateDraftParams, CreateDraftUrlResponse, Draft, Point} from "./pointr.types";
 
 export class Pointr {
   private http: Http;
@@ -39,6 +39,16 @@ export class Pointr {
 
   async getDraftPoints(userKey: string) {
     const result = await this.http.get<Point[]>(`/v1/draft/${userKey}/points`);
+
+    if(result.error) {
+      throw new Error(result.error.message);
+    }
+
+    return result.data;
+  }
+
+  async checkIfUserExists(userEmail: string) {
+    const result = await this.http.get<CheckIfUserExistsResponse>(`/v1/user/${userEmail}/exists`);
 
     if(result.error) {
       throw new Error(result.error.message);

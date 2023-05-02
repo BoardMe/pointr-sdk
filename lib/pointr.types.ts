@@ -26,3 +26,7 @@ export type CreateDraftUrlResponse = {
   url: string
   draftId: string
 }
+
+export type CheckIfUserExistsResponse = {
+  exists: boolean
+}
