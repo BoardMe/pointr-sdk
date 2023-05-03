@@ -8,6 +8,9 @@ import {
   PointrClient
 } from "./pointr.types";
 
+/**
+ * A client for the Pointr API
+ */
 export class Pointr implements PointrClient {
   private http: Http;
   constructor(private readonly apiKey: string) {
