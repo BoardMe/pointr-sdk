@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hugoarmor/auto-event.git"
+    "url": "git+https://github.com/BoardMe/pointr-sdk.git"
   },
   "bugs": {
     "url": "https://github.com/BoardMe/pointr-sdk/issues"
