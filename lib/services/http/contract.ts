@@ -8,10 +8,6 @@ export abstract class Contract {
     try {
       const apiResponse = await fn();
 
-      if (apiResponse.status >= 400) {
-        throw apiResponse.data;
-      }
-
       const isAxios = Boolean(apiResponse.data);
 
       if (isAxios) {
@@ -24,7 +20,7 @@ export abstract class Contract {
 
       return {
         error: {
-          message: (error.response?.data as any)?.message || error.response,
+          message: (error.response?.data as any)?.error || error.response,
           status: error.response?.status ?? 500,
         },
       };
