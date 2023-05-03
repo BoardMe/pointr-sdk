@@ -10,6 +10,12 @@ You can install Pointr using `npm`:
 npm install pointr-sdk --save
 ```
 
+Or with `yarn`:
+
+```bash
+yarn add pointr-sdk
+```
+
 ## Usage
 
 To use Pointr, you'll need to declare an instance of a `PointrClient` as it follows:
