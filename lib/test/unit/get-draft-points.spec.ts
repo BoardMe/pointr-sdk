@@ -1,21 +1,22 @@
-import { Pointr } from "../../lib";
+import { Pointr } from "../../index";
 import { draftMock } from "../mocks/draft.mock";
 import { httpMock, mockHttpResponse } from "../mocks/http.mock";
+import { pointMock } from "../mocks/point.mock";
 
 const setupSUT = () => {
   const pointr = new Pointr("sample-api-key");
-  const getDraft = pointr.getDraft.bind(pointr)
+  const getDraftPoints = pointr.getDraftPoints.bind(pointr)
 
-  return { getDraft }
+  return { getDraftPoints }
 }
 
-describe('getDraft', () => {
+describe('getDraftPoints', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   })
 
   it('should return an error if request fails', async () => {
-    const { getDraft } = setupSUT();
+    const { getDraftPoints } = setupSUT();
 
     mockHttpResponse('get', {
       error: {
@@ -25,25 +26,26 @@ describe('getDraft', () => {
     })
 
     try {
-      await getDraft('test');
+      await getDraftPoints('test');
     } catch (error) {
       const message = (error as Error).message;
       expect(message).toBe('Failed to fetch draft');
     }
   })
-  it('should return a draft', async () => {
-    const { getDraft } = setupSUT();
+  it('should return a list of points', async () => {
+    const { getDraftPoints } = setupSUT();
 
     const mockedDraft = draftMock();
+    const mockedPoints = [pointMock(), pointMock()];
 
     mockHttpResponse('get', {
-      data: mockedDraft,
+      data: mockedPoints,
       error: null
     })
 
-    const draft = await getDraft('test');
+    const points = await getDraftPoints(mockedDraft.userKey);
 
-    expect(draft).toBe(mockedDraft);
-    expect(httpMock.get).toBeCalledWith('/v1/draft/test');
+    expect(points).toBe(mockedPoints);
+    expect(httpMock.get).toBeCalledWith(`/v1/draft/${mockedDraft.userKey}/points`);
   });
 })

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "npx tsc",
-    "test": "jest --config ./test/jest.config.ts"
+    "test": "jest --config lib/test/jest.config.ts"
   },
   "keywords": [],
   "author": "",

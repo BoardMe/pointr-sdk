@@ -1,4 +1,4 @@
-import {Draft} from "../../lib/pointr.types";
+import {Draft} from "../../pointr.types";
 
 export const draftMock = (params?: Partial<Draft>) =>
   ({
