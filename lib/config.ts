@@ -1,3 +1,3 @@
 export const config = {
-  BASE_URL: "http://localhost:5033",
+  BASE_URL: "http://api.pointr.co",
 }
